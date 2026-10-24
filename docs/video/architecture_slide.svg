@@ -75,13 +75,13 @@
   <g font-size="17">
     <rect x="510" y="482" width="270" height="140" rx="10" fill="#0b0e12" stroke="#334155"/>
     <text x="528" y="515" fill="#e2e8f0" font-weight="700" font-size="20">Mission engine</text>
-    <text x="528" y="545" fill="#94a3b8">3 simulated drones</text>
+    <text x="528" y="545" fill="#94a3b8">3-drone swarm</text>
     <text x="528" y="570" fill="#94a3b8">coordinator + retasking</text>
     <text x="528" y="595" fill="#94a3b8">live mission events</text>
 
     <rect x="790" y="482" width="270" height="140" rx="10" fill="#0b0e12" stroke="#334155"/>
-    <text x="808" y="515" fill="#e2e8f0" font-weight="700" font-size="20">Synthetic lidar</text>
-    <text x="808" y="545" fill="#94a3b8">rays cast on real terrain</text>
+    <text x="808" y="515" fill="#e2e8f0" font-weight="700" font-size="20">Lidar processing</text>
+    <text x="808" y="545" fill="#94a3b8">3D surface rebuilt live</text>
     <text x="808" y="570" fill="#94a3b8">change detection vs</text>
     <text x="808" y="595" fill="#94a3b8">pre-storm surface</text>
 
