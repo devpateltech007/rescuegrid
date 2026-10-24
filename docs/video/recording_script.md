@@ -1,6 +1,7 @@
 # RESCUEGRID 3D: 5-minute video recording script
 
-The video has two parts: the architecture slide (about 50 s), then the live app (about 4 min 10 s).
+The video has two parts: the architecture slide (about 50 s), then the live app running the
+Swannanoa showcase mission (about 4 min 10 s).
 Record them as **two separate clips** and join them. The app part has two waits of 30–60 s each
 while drones fly and Bedrock answers. Either talk over them or cut them in editing.
 
@@ -32,8 +33,10 @@ while drones fly and Bedrock answers. Either talk over them or cut them in editi
 **Say:**
 > "In September 2024 Hurricane Helene washed out roads and bridges across western North Carolina.
 > In Swannanoa, NCDOT documented that flooding destroyed both approaches of the Whitson Avenue Bridge.
-> RESCUEGRID 3D replays that event: drones scan the valley, Amazon Bedrock reads the imagery, a
-> commander confirms what's blocked, and the system reroutes rescuers on the real road network."
+> RESCUEGRID 3D is a live command center for that moment, when ground teams can't get in. Drones
+> scan the area, Amazon Bedrock reads the imagery, a commander confirms what's blocked, and the
+> system reroutes rescuers on the real road network. We'll show it on Swannanoa. The terrain, roads,
+> imagery and bridge record are real; the drone fleet is simulated."the real road network."
 
 ### B · 0:15–0:50 · Slide: architecture and tech stack
 **Screen:** same slide. If your recorder allows it, move the mouse pointer to each part as you name it.

@@ -2,19 +2,46 @@
 
 **Autonomous Disaster Reconnaissance and Rescue Intelligence**. Built for SpartHill Hacks 2026, AWS Track.
 
-RESCUEGRID 3D is a command center for a FEMA US&R planning specialist. It replays the conditions in
-Swannanoa, NC after **Hurricane Helene (Sept 2024)**. Three simulated drones scan the real USGS terrain
-with synthetic lidar, and the scans progressively build a 3D surface. Lidar change detection triggers
-camera observations: real NOAA post-storm imagery where it exists, otherwise labeled synthetic
-renders. **Amazon Bedrock** (Claude Sonnet 4.5, Converse API, image bytes) turns each observation
-into structured hazard intelligence. The commander reviews the drone evidence and decides. The real
-OpenStreetMap road graph is rerouted, a drone is retasked to the most valuable unverified crossing,
-and Bedrock writes an evidence-grounded briefing for the approved *simulated* mission.
+RESCUEGRID 3D is a live command center for disaster response. When roads and bridges fail and ground
+teams can't get in, a planning specialist sends a drone swarm over the area. RESCUEGRID 3D turns
+what the drones see into a verified, routable picture of which roads are open:
 
-> Historical replay for demonstration. The drones, debris, fallen trees, floodwater and the
-> staging/rescue points are simulated. The only documented historical event in the scenario is the
-> Whitson Avenue Bridge damage (NCDOT). Not affiliated with or endorsed by FEMA or the National Guard.
+1. Drones scan their assigned sectors with lidar, and the scans build a 3D surface of the area in real time.
+2. Change detection compares that surface with the pre-disaster terrain and flags damage on roads.
+3. **Amazon Bedrock** (Claude Sonnet 4.5, Converse API) analyzes the drone's image of each flagged spot
+   and returns a structured hazard assessment.
+4. The commander reviews the evidence and confirms or clears each hazard. Nothing changes road
+   status without a named human decision.
+5. The router recalculates the access route on the real road network, the coordinator retasks a
+   drone to the most valuable unchecked crossing, and Bedrock writes a briefing grounded in the
+   mission's evidence.
+
+### Showcase: Hurricane Helene, Swannanoa, NC
+
+The app is demonstrated on a real disaster. In September 2024 Hurricane Helene flooded the Swannanoa
+River valley, and NCDOT documented that both approaches of the **Whitson Avenue Bridge** were washed
+out. The showcase mission plans a route from a staging area to a rescue site across that river,
+using the real USGS terrain, the real OpenStreetMap road graph, and real NOAA aerial imagery flown
+after the storm.
+
+> **What is real and what is simulated in the showcase.** Terrain, roads, buildings, river, the NOAA
+> imagery and the bridge damage record are real. The drone fleet, its lidar, the other hazards
+> (debris, fallen trees, floodwater) and the staging and rescue points are simulated, and the UI
+> labels every item with its source. Bedrock calls, routing and the decision log run live. Travel
+> times are estimates, not ETAs. Not affiliated with or endorsed by FEMA or the National Guard.
 > Real dispatch requires authorized personnel.
+
+### Using it on a new disaster
+
+The pipeline from change detection onward (Bedrock analysis, human verification, rerouting,
+retasking, briefing) doesn't depend on Helene. To stand it up for another area you would:
+
+- run the data scripts below for the new bounding box (terrain, road graph, buildings, imagery);
+- replace the drone simulator with an adapter that feeds real telemetry, lidar and camera frames
+  into the same event contract (`backend/app/simulation/engine.py`);
+- add authentication and a production database before real operational use.
+
+These are integration steps that aren't built yet.
 
 ![briefing](docs/screens/s1_briefing_233554.png)
 ![swarm](docs/screens/s2_swarm_233554.png)
@@ -44,7 +71,7 @@ All geodata is already in `data/`. To regenerate it from the public sources:
 .venv\Scripts\python scripts\bootstrap_geodata.py      &rem OSM graph, bridge, river, buildings
 .venv\Scripts\python scripts\prepare_terrain.py        &rem USGS 3DEP DEM (5 m + 30 m)
 .venv\Scripts\python scripts\validate_route_scenario.py&rem proves the reroute exists
-.venv\Scripts\python scripts\build_scenario.py         &rem scenario ground truth on real edges
+.venv\Scripts\python scripts\build_scenario.py         &rem showcase hazards placed on real edges
 .venv\Scripts\python scripts\fetch_noaa_imagery.py     &rem NOAA Helene coverage probe + crops
 .venv\Scripts\python scripts\build_manifest.py         &rem data/manifest.json, docs/data_sources.md
 .venv\Scripts\python scripts\make_drone_glb.py         &rem procedural drone model
@@ -70,9 +97,9 @@ are needed.
 | What | Command |
 |---|---|
 | Unit/integration tests (no AWS) | `scripts\run_tests.cmd` → `data\runtime\pytest.txt` |
-| Full storyline headless, **live Bedrock** | `.venv\Scripts\python scripts\e2e_demo.py` → `docs/evaluation_run.json` |
+| Full showcase mission headless, **live Bedrock** | `.venv\Scripts\python scripts\e2e_demo.py` → `docs/evaluation_run.json` |
 | API smoke (local or EC2) | `.venv\Scripts\python scripts\smoke_api.py [url]` |
-| Browser storyline + screenshots | `.venv\Scripts\python scripts\capture_story.py [url] docs\screens --full` |
+| Browser mission run + screenshots | `.venv\Scripts\python scripts\capture_story.py [url] docs\screens --full` |
 
 ## Docs
 
@@ -97,4 +124,5 @@ are needed.
   BRIDGE_DAMAGE. That's why every status change requires a named human decision.
 - Heights use the NAVD88 values directly as scene heights (no geoid correction). This is consistent
   internally, but absolute heights are offset by about 30 m from the ellipsoid.
-- SQLite and a single EC2 instance. No authentication beyond the operator-name field (demo scope).
+- SQLite and a single EC2 instance. No authentication beyond the operator-name field.
+- The drone fleet is simulated. Real drones need a telemetry and sensor adapter (see *Using it on a new disaster*).

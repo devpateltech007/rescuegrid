@@ -1,5 +1,10 @@
 # RESCUEGRID 3D — Architecture
 
+RESCUEGRID 3D is built as a live disaster-response system: drone data streams in, Bedrock assesses
+it, a commander decides, and the route updates. The showcase mission runs it on Hurricane Helene in
+Swannanoa, NC, with a simulated drone fleet supplying the telemetry, lidar and camera frames. A real
+fleet would replace the simulator through an adapter; everything downstream stays the same.
+
 ```mermaid
 flowchart LR
   subgraph Browser["Browser (React + TypeScript + Tailwind)"]

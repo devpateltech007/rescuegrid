@@ -5,7 +5,7 @@ Amazon Bedrock and S3 in us-east-1 and the real OSM graph and USGS DEM. The raw 
 `docs/evaluation_run.json`.
 
 **Two kinds of numbers appear below:**
-- *Simulated* values are outputs of the exercise: coverage, distances, travel estimates.
+- *Simulated* values are outputs of the showcase mission: coverage, distances, travel estimates.
 - *Measured* values are software execution times: Bedrock latency, recalculation time, tick time.
 
 ## Workflow (definition of done)
