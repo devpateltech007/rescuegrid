@@ -1,0 +1,30 @@
+{
+  "file": "data/imagery/noaa_riverwood_bridge.jpg",
+  "source_type": "PUBLIC_HISTORICAL_IMAGERY",
+  "publisher": "NOAA National Geodetic Survey, Remote Sensing Division",
+  "layer": "20241005a_RGB",
+  "tile_template": "https://stormscdn.ngs.noaa.gov/20241005a-rgb/{z}/{x}/{y}",
+  "zoom": 19,
+  "bounds_wgs84": {
+    "west": -82.40927448015296,
+    "south": 35.60028245114468,
+    "east": -82.40750678305002,
+    "north": 35.60171974902467
+  },
+  "center": {
+    "lon": -82.40839063160149,
+    "lat": 35.60100110008467
+  },
+  "half_size_m": 80,
+  "pixel_size": [
+    659,
+    659
+  ],
+  "valid_pixel_fraction": 1.0,
+  "approx_gsd_m": 0.243,
+  "accuracy_note": "NOAA states no accuracy or completeness guarantee; mosaic GSD ~15-30 cm.",
+  "retrieved_at": "2026-10-24T05:51:28Z",
+  "acquisition_date": "2024-10-05",
+  "flight_id": "20241005a_RGB",
+  "site": "riverwood_bridge"
+}

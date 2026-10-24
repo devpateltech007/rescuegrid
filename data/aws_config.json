@@ -1,0 +1,8 @@
+{
+  "region": "us-east-1",
+  "account": "663748689981",
+  "bucket": "rescuegrid3d-663748689981-us-east-1",
+  "bedrock_model_id": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "verified_at": "2026-10-24T05:07:32Z",
+  "verify_latency_ms": 4330
+}

@@ -1,0 +1,25 @@
+{
+  "name": "dem_coarse",
+  "width": 1000,
+  "height": 1000,
+  "bounds": {
+    "west": -82.56362148685213,
+    "south": 35.43650576420749,
+    "east": -82.23217319059276,
+    "north": 35.767954060466856
+  },
+  "crs": "EPSG:4326",
+  "vertical_datum": "NAVD88 (metres)",
+  "encoding": "uint16 LE, height_m = offset_m + value * scale, row 0 = north edge",
+  "offset_m": 301,
+  "scale": 0.1,
+  "min_m": 302.67291259765625,
+  "max_m": 2033.338623046875,
+  "mean_m": 888.5555219693908,
+  "approx_resolution_m": 30.0,
+  "source": "USGS 3D Elevation Program (3DEP) Elevation ImageServer",
+  "source_url": "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage",
+  "temporal_note": "3DEP lidar for Buncombe County predates Hurricane Helene (pre-storm terrain).",
+  "provenance": "CURRENT_BASEMAP",
+  "retrieved_at": "2026-10-24T05:37:32Z"
+}

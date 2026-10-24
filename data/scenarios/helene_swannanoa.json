@@ -1,0 +1,218 @@
+{
+  "scenario_id": "helene-swannanoa-2024",
+  "name": "Hurricane Helene historical replay \u2014 Swannanoa, NC",
+  "replay_window": "Selected conditions, late September \u2013 early October 2024",
+  "sim_start": "2024-09-28T09:00:00-04:00",
+  "disclaimer": "Historical disaster replay for training/demonstration. Drones, debris, trees, floodwater and staging/destination points are SIMULATED. Only the Whitson Avenue Bridge damage is a documented historical event (NCDOT). Not a depiction of current road conditions.",
+  "staging": {
+    "lon": -82.392037,
+    "lat": 35.6043768,
+    "node": 169716714,
+    "name": "Staging Area S-1 (simulated)",
+    "provenance": "SIMULATED_SCENARIO"
+  },
+  "destination": {
+    "lon": -82.4018485,
+    "lat": 35.6004261,
+    "node": 169568270,
+    "name": "Rescue Site R-7: isolated residents reported (simulated)",
+    "provenance": "SIMULATED_SCENARIO"
+  },
+  "hazards": [
+    {
+      "hazard_id": "GT-WHITSON-BRIDGE",
+      "kind": "BRIDGE_DAMAGE",
+      "title": "Whitson Avenue Bridge \u2014 approaches and piles washed out",
+      "edge_ids": [
+        "169613032-169616920-0",
+        "169616920-169613032-0",
+        "169616920-169613032-0",
+        "169613032-169616920-0"
+      ],
+      "location": {
+        "lon": -82.39790046431222,
+        "lat": 35.60222982789618
+      },
+      "provenance": [
+        "OFFICIAL_HISTORICAL_RECORD",
+        "SIMULATED_SCENARIO"
+      ],
+      "historical_basis": "NCDOT (2025-02-24): Helene flooding washed out the approaches on both sides of the Whitson Avenue Bridge and the piles in the river, 'almost everything but the deck'. Repaired and reopened February 2025.",
+      "historical_source": "https://www.ncdot.gov/news/press-releases/Pages/2025/2025-02-24-ncdot-completes-repairs-swannanoa-bridge.aspx",
+      "modeled_geometry_note": "Washout depth/extent below is MODELED for the simulation, not a historical measurement.",
+      "geometry": {
+        "type": "washout",
+        "craters": [
+          {
+            "lon": -82.39797292083453,
+            "lat": 35.60246116055019,
+            "radius_m": 11,
+            "depth_m": 3.2
+          },
+          {
+            "lon": -82.39781655206609,
+            "lat": 35.602001282735266,
+            "radius_m": 10,
+            "depth_m": 2.6
+          }
+        ],
+        "deck": {
+          "line": [
+            [
+              -82.3979968,
+              35.602534
+            ],
+            [
+              -82.397967,
+              35.6024431
+            ],
+            [
+              -82.3978667,
+              35.6021216
+            ],
+            [
+              -82.3977868,
+              35.6019299
+            ]
+          ],
+          "width_m": 12,
+          "deck_height_m": 0.0
+        }
+      },
+      "image_site": "noaa_whitson_bridge",
+      "ground_truth_access": "BLOCKED"
+    },
+    {
+      "hazard_id": "GT-DEBRIS-US70",
+      "kind": "DEBRIS_OBSTRUCTION",
+      "title": "Debris pile across West State Street (US 70)",
+      "edge_ids": [
+        "169462216-169616920-0",
+        "169616920-169462216-0"
+      ],
+      "location": {
+        "lon": -82.39133499869466,
+        "lat": 35.60263920683014
+      },
+      "provenance": [
+        "SIMULATED_SCENARIO"
+      ],
+      "modeled_geometry_note": "Entirely simulated hazard for the exercise; not a historical record.",
+      "geometry": {
+        "type": "mounds",
+        "road_heading_deg": 284.58271613473147,
+        "mounds": [
+          {
+            "dx": 0,
+            "dy": 0,
+            "radius_m": 9,
+            "height_m": 2.8
+          },
+          {
+            "dx": 6,
+            "dy": -4,
+            "radius_m": 5,
+            "height_m": 1.9
+          },
+          {
+            "dx": -7,
+            "dy": 3,
+            "radius_m": 6,
+            "height_m": 1.5
+          }
+        ]
+      },
+      "image_site": null,
+      "ground_truth_access": "BLOCKED"
+    },
+    {
+      "hazard_id": "GT-TREES-OLD70",
+      "kind": "FALLEN_TREES",
+      "title": "Fallen trees across Old US Highway 70",
+      "edge_ids": [
+        "169641558-169716711-0",
+        "169716711-169641558-0"
+      ],
+      "location": {
+        "lon": -82.3910710288557,
+        "lat": 35.60439445288902
+      },
+      "provenance": [
+        "SIMULATED_SCENARIO"
+      ],
+      "modeled_geometry_note": "Entirely simulated hazard for the exercise; not a historical record.",
+      "geometry": {
+        "type": "trees",
+        "road_heading_deg": 270.076296978731,
+        "trunks": [
+          {
+            "dx": -4,
+            "dy": 0,
+            "len_m": 22,
+            "angle_off_road_deg": 75,
+            "radius_m": 0.45
+          },
+          {
+            "dx": 5,
+            "dy": 2,
+            "len_m": 18,
+            "angle_off_road_deg": 105,
+            "radius_m": 0.35
+          }
+        ]
+      },
+      "image_site": null,
+      "ground_truth_access": "BLOCKED"
+    },
+    {
+      "hazard_id": "GT-FLOOD-WHITSON-S",
+      "kind": "FLOODING",
+      "title": "Standing floodwater on Whitson Avenue (south)",
+      "edge_ids": [
+        "169669208-169669507-0",
+        "169669507-169669208-0"
+      ],
+      "location": {
+        "lon": -82.39696784157583,
+        "lat": 35.60030026590043
+      },
+      "provenance": [
+        "SIMULATED_SCENARIO"
+      ],
+      "modeled_geometry_note": "Simulated water level; not a historical flood-depth measurement.",
+      "geometry": {
+        "type": "flood",
+        "radius_m": 45,
+        "depth_m": 0.6
+      },
+      "image_site": null,
+      "ground_truth_access": "PASSABLE_WITH_CAUTION"
+    }
+  ],
+  "pois": [
+    {
+      "poi_id": "POI-WHITSON-BRIDGE",
+      "name": "Whitson Avenue Bridge",
+      "lon": -82.39790046431222,
+      "lat": 35.60222982789618,
+      "edge_ids": [
+        "169613032-169616920-0",
+        "169616920-169613032-0"
+      ],
+      "is_bridge": true
+    },
+    {
+      "poi_id": "POI-RIVERWOOD-BRIDGE",
+      "name": "Riverwood Road Bridge",
+      "lon": -82.40839063160149,
+      "lat": 35.60100110008467,
+      "edge_ids": [
+        "3050608732-3050608735-0",
+        "3050608735-3050608732-0",
+        "3050608735-3050608732-0",
+        "3050608732-3050608735-0"
+      ],
+      "is_bridge": true
+    }
+  ]
+}

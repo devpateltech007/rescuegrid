@@ -1,0 +1,30 @@
+# Secrets — never commit
+.env
+.secrets/
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+backend/*.egg-info/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Data caches / raw downloads / runtime state
+data/raw/
+data/cache/
+data/runtime/
+*.sqlite
+*.sqlite3
+*.db
+
+# Build / deploy artifacts
+build/
+release/
+*.tar.gz
+*.tsbuildinfo
+data/deployment.json

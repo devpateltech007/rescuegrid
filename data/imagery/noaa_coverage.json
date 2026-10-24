@@ -1,0 +1,33 @@
+{
+  "covered": true,
+  "selected_layer": "20241005a_RGB",
+  "tile_template": "https://stormscdn.ngs.noaa.gov/20241005a-rgb/{z}/{x}/{y}",
+  "acquisition_date": "2024-10-05",
+  "layer_bounds": [
+    -83.4876,
+    35.32490003,
+    -81.62489943,
+    36.2376
+  ],
+  "maxzoom": 20,
+  "probe": [
+    {
+      "layer": "20241005a_RGB",
+      "bridge_coverage": 1.0
+    },
+    {
+      "layer": "20241006a_RGB",
+      "bridge_coverage": 0.0
+    },
+    {
+      "layer": "20241007a_RGB",
+      "bridge_coverage": 0.0
+    }
+  ],
+  "crops": {
+    "bridge": "data/imagery/noaa_whitson_bridge.jpg",
+    "riverwood_bridge": "data/imagery/noaa_riverwood_bridge.jpg",
+    "whitson_bridge_close": "data/imagery/noaa_whitson_bridge_close.jpg",
+    "riverwood_bridge_close": "data/imagery/noaa_riverwood_bridge_close.jpg"
+  }
+}

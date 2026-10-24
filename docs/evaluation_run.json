@@ -1,0 +1,50 @@
+{
+  "mission_id": "M-AC617C",
+  "mean_tick_ms": 196.6,
+  "metrics": {
+    "survey_area_m2": 4000000,
+    "observed_area_m2": 309936,
+    "survey_coverage_pct": 7.75,
+    "road_segments_in_survey": 372,
+    "road_segments_assessed": 66,
+    "road_status_counts": {
+      "SUSPECTED_BLOCKED": 4,
+      "UNKNOWN": 352,
+      "OBSERVED_PASSABLE": 12,
+      "CONFIRMED_BLOCKED": 2,
+      "VERIFIED_PASSABLE": 2
+    },
+    "scan_points": 715884,
+    "scans": 1059,
+    "observations": 4,
+    "incidents": 4,
+    "confirmed_hazards": 1,
+    "bedrock_calls_completed": 5,
+    "bedrock_calls_failed": 0,
+    "bedrock_latency_ms_mean": 10538.0,
+    "route_recalc_ms_mean": 26.88,
+    "original_route_distance_m": 1066.2,
+    "original_route_travel_s": 62.3,
+    "current_route_distance_m": 2595.1,
+    "current_route_travel_s": 155.6,
+    "current_route_unverified_edges": 14,
+    "simulated_elapsed_s": 366,
+    "note": "Distances/times are simulated estimates from OSM speeds; latencies are measured software execution times."
+  },
+  "bridge_incident": "INC-4A348",
+  "bridge_invocation": {
+    "model_id": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "latency_ms": 11408.2,
+    "input_tokens": 2100,
+    "output_tokens": 463,
+    "status": "SUCCESS"
+  },
+  "reroute": {
+    "from_m": 1066.2,
+    "to_m": 2595.1,
+    "from_s": 62.3,
+    "to_s": 155.6,
+    "recalc_ms": 25.1
+  },
+  "briefing_status": "SUCCESS"
+}

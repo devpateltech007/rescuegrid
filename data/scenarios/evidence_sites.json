@@ -1,0 +1,20 @@
+[
+  {
+    "id": "riverwood_bridge",
+    "lon": -82.40839063160149,
+    "lat": 35.60100110008467,
+    "half_m": 80
+  },
+  {
+    "id": "whitson_bridge_close",
+    "lon": -82.39790046431222,
+    "lat": 35.60222982789618,
+    "half_m": 45
+  },
+  {
+    "id": "riverwood_bridge_close",
+    "lon": -82.40839063160149,
+    "lat": 35.60100110008467,
+    "half_m": 40
+  }
+]
